@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Ensar - Sagi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       background: #0f0f0f;
@@ -12,35 +13,84 @@
       text-align: center;
       margin: 0;
       padding: 0;
+      transition: 0.4s;
     }
 
     .kutu {
-      margin-top: 100px;
+      margin-top: 30px;
       padding: 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ✅ FOTO + YANIP SÖNEN ÇERÇEVE */
+    .pp-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .pp-isin {
+      padding: 7px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ff004c, #ffb300, #00f7ff, #9d00ff);
+      animation: donus 4s linear infinite, parlama 1.2s infinite alternate;
+    }
+
+    @keyframes donus {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes parlama {
+      from { filter: brightness(1); }
+      to { filter: brightness(1.7); }
+    }
+
+    .pp {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0f0f0f;
+      background: #000;
     }
 
     h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin-bottom: 5px;
     }
 
     p {
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 30px;
+      font-size: 17px;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 12px;
+      width: 230px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 15px;
+      outline: none;
     }
 
     .buton {
       display: block;
-      margin: 12px auto;
+      margin: 10px auto;
       width: 260px;
-      padding: 15px 30px;
+      padding: 14px 30px;
       background: linear-gradient(45deg, #ff0066, #ff8800);
       color: white;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: bold;
       border-radius: 50px;
+      border: none;
+      cursor: pointer;
       box-shadow: 0 0 15px rgba(255,0,102,0.5);
       transition: 0.2s;
     }
@@ -50,26 +100,130 @@
       box-shadow: 0 0 25px rgba(255,136,0,0.8);
     }
 
-    .buton2 {
-      background: linear-gradient(45deg, #00ffaa, #00aaff);
-      box-shadow: 0 0 15px rgba(0,255,170,0.5);
+    .insta {
+      background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+      box-shadow: 0 0 15px rgba(253,29,29,0.6);
+    }
+
+    .mesaj {
+      margin-top: 22px;
+      font-size: 20px;
+      min-height: 30px;
+      font-weight: bold;
+    }
+
+    /* ✅ KÖŞE IŞIK EFEKTİ */
+    .glow::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      box-shadow: 0 0 90px 35px var(--renk) inset;
+      animation: glowPulse 1.2s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { opacity: 0.3; }
+      to { opacity: 0.85; }
     }
   </style>
 </head>
-<body>
+<body id="ekran">
 
   <div class="kutu">
-    <h1>Naber panpa ben Ensar 😎</h1>
-    <p>Sagi derler</p>
 
-    <a class="buton" href="https://www.instagram.com/sagi_mok?igsh=bzFhN3BjcWU2cXR4" target="_blank">
+    <!-- ✅ SENİN FOTO -->
+    <div class="pp-wrapper">
+      <div class="pp-isin">
+        <img src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp" class="pp">
+      </div>
+    </div>
+
+    <h1>Naber panpa ben Ensar 😎</h1>
+    <p>Sagi derler – Şifreni yaz pampa 🔐</p>
+
+    <input type="password" id="sifre" placeholder="Şifreni yaz pampa">
+
+    <button class="buton" onclick="kontrolEt()">Mesajı Göster ❤️</button>
+
+    <a class="buton insta" href="https://www.instagram.com/sagi_mok?igsh=bzFhN3BjcWU2cXR4" target="_blank">
       Instagram Hesabıma Git 🚀
     </a>
 
-    <a class="buton buton2" href="sev.html">
-      Sana bir mesajım var 
-    </a>
+    <div class="mesaj" id="sonuc"></div>
   </div>
+
+  <script>
+    function renkEfekti(renk) {
+      let ekran = document.getElementById("ekran");
+      ekran.style.setProperty("--renk", renk);
+      ekran.classList.remove("glow");
+      void ekran.offsetWidth;
+      ekran.classList.add("glow");
+    }
+
+    function kontrolEt() {
+      var sifre = document.getElementById("sifre").value.trim().toLowerCase();
+      var sonuc = document.getElementById("sonuc");
+
+      if (!sifre) {
+        sonuc.innerHTML = "Boş geçme pampa 😈";
+        return;
+      }
+
+      switch (sifre) {
+        case "melis":
+          sonuc.innerHTML = "sevıyom senı pampa";
+          renkEfekti("red");
+          break;
+
+        case "mete":
+          sonuc.innerHTML = "kralsın dostum";
+          renkEfekti("deepskyblue");
+          break;
+
+        case "ayse":
+          sonuc.innerHTML = "best frıendlerımdensın kanka";
+          renkEfekti("gold");
+          break;
+
+        case "eren":
+          sonuc.innerHTML = "sanalda npcsin seviyom seni kanka";
+          renkEfekti("purple");
+          break;
+
+        case "mustafa":
+          sonuc.innerHTML = "senle haliçe işiyekmi pampa, doğum günün erkenden kutlu olsun 🎂🔥";
+          renkEfekti("orange");
+          break;
+
+        case "nehir":
+          sonuc.innerHTML = "sevilion kanka";
+          renkEfekti("crimson");
+          break;
+
+        case "enes":
+          sonuc.innerHTML = "seviyom seni pampa ❤️";
+          renkEfekti("hotpink");
+          break;
+
+        case "efe":
+          sonuc.innerHTML = "annenı dusunuyom pampaaa 😈";
+          renkEfekti("lime");
+          break;
+
+        case "random":
+          sonuc.innerHTML = "kendini sev pampa ❤️";
+          renkEfekti("cyan");
+          break;
+
+        default:
+          sonuc.innerHTML = "Bu şifre bende yok pampa 😅";
+          document.getElementById("ekran").classList.remove("glow");
+      }
+    }
+  </script>
 
 </body>
 </html>
