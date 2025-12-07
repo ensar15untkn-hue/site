@@ -22,7 +22,6 @@
       z-index: 5;
     }
 
-    /* FOTO + YANIP SÖNEN ÇERÇEVE */
     .pp-wrapper {
       display: flex;
       justify-content: center;
@@ -110,7 +109,6 @@
       font-weight: bold;
     }
 
-    /* KÖŞE IŞIK */
     .glow::before {
       content: "";
       position: fixed;
@@ -126,7 +124,6 @@
       to { opacity: 0.85; }
     }
 
-    /* DARK */
     .darken::after {
       content: "";
       position: fixed;
@@ -135,7 +132,6 @@
       z-index: 1;
     }
 
-    /* EFEKT KATMANI */
     #efektKatmani {
       position: fixed;
       inset: 0;
@@ -167,10 +163,9 @@
       100% { transform: translateY(110%) rotate(360deg); opacity: 0; }
     }
 
-    /* NEHİR FOTO */
     #nehirFoto {
       display: none;
-      margin-top: 15px;
+      margin: 15px auto;
       width: 180px;
       border-radius: 15px;
       box-shadow: 0 0 25px red;
@@ -183,11 +178,10 @@
 
   <div class="kutu">
 
-    <!-- MAYMUN FOTO -->
     <div class="pp-wrapper">
       <div class="pp-isin">
         <img
-          src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp"
+          src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp?ex=69373947&is=6935e7c7&hm=1163668bafb97eeebcef1a7bb1cc13c0eeaef3ab2fde8db29bcd1ad657740e7e&"
           class="pp">
       </div>
     </div>
@@ -211,7 +205,7 @@
 
     <img
       id="nehirFoto"
-      src="https://cdn.discordapp.com/attachments/1433088303200079935/1447334125727121589/WhatsApp_Gorsel_2025-12-08_saat_00.08.17_07b42414.jpg">
+      src="https://cdn.discordapp.com/attachments/1433088303200079935/1447334125727121589/WhatsApp_Gorsel_2025-12-08_saat_00.08.17_07b42414.jpg?ex=69373e71&is=6935ecf1&hm=d10ba11b37880207562b243def91354703072bf8c783f783fdb03008097798e6&">
   </div>
 
   <script>
@@ -229,7 +223,6 @@
         h.className = "heart";
         h.textContent = "❤";
         h.style.left = Math.random() * 100 + "%";
-        h.style.animationDelay = (Math.random() * 1.2) + "s";
         kat.appendChild(h);
       }
     }
@@ -243,7 +236,6 @@
         c.className = "confetti";
         c.style.left = Math.random() * 100 + "%";
         c.style.background = renkler[Math.floor(Math.random() * renkler.length)];
-        c.style.animationDelay = (Math.random() * 1.0) + "s";
         kat.appendChild(c);
       }
     }
@@ -255,59 +247,24 @@
 
     function kontrolEt() {
       temizEfekt();
-      const input = document.getElementById("sifre");
-      const sifre = input.value.toLowerCase().trim();
+      const sifre = document.getElementById("sifre").value.toLowerCase().trim();
       const sonuc = document.getElementById("sonuc");
 
-      if (!sifre) {
-        sonuc.innerHTML = "Boş geçme pampa";
-        return;
-      }
-
       switch (sifre) {
-        case "melis":
-          sonuc.innerHTML = "sevıyom senı pampa";
-          renkEfekti("red");
-          kalpYagmuru();
-          break;
-        case "mete":
-          sonuc.innerHTML = "kralsın dostum";
-          renkEfekti("deepskyblue");
-          break;
-        case "ayse":
-          sonuc.innerHTML = "best frıendlerımdensın kanka";
-          renkEfekti("gold");
-          break;
-        case "eren":
-          sonuc.innerHTML = "sanalda npcsin seviyom seni kanka";
-          renkEfekti("purple");
-          break;
-        case "mustafa":
-          sonuc.innerHTML = "senle haliçe işiyekmi pampa, doğum günün erkenden kutlu olsun";
-          renkEfekti("orange");
-          konfetiPatlat();
-          break;
+        case "melis": sonuc.innerHTML="sevıyom senı pampa"; renkEfekti("red"); kalpYagmuru(); break;
+        case "mete": sonuc.innerHTML="kralsın dostum"; renkEfekti("deepskyblue"); break;
+        case "ayse": sonuc.innerHTML="best frıendlerımdensın kanka"; renkEfekti("gold"); break;
+        case "eren": sonuc.innerHTML="sanalda npcsin seviyom seni kanka"; renkEfekti("purple"); break;
+        case "mustafa": sonuc.innerHTML="senle haliçe işiyekmi pampa, doğum günün erkenden kutlu olsun"; renkEfekti("orange"); konfetiPatlat(); break;
         case "nehir":
-          sonuc.innerHTML = "sevilion kanka — bu sen bu arada,";
+          sonuc.innerHTML="sevilion kanka — bu sen bu arada,";
           renkEfekti("crimson");
-          document.getElementById("nehirFoto").style.display = "block";
+          document.getElementById("nehirFoto").style.display="block";
           break;
-        case "enes":
-          sonuc.innerHTML = "seviyom seni pampa";
-          renkEfekti("hotpink");
-          kalpYagmuru();
-          break;
-        case "efe":
-          sonuc.innerHTML = "annenı dusunuyom pampaaa";
-          renkEfekti("lime");
-          document.getElementById("ekran").classList.add("darken");
-          break;
-        case "random":
-          sonuc.innerHTML = "kendini sev pampa";
-          renkEfekti("cyan");
-          break;
-        default:
-          sonuc.innerHTML = "Bu şifre bende yok pampa";
+        case "enes": sonuc.innerHTML="seviyom seni pampa"; renkEfekti("hotpink"); kalpYagmuru(); break;
+        case "efe": sonuc.innerHTML="annenı dusunuyom pampaaa"; renkEfekti("lime"); document.getElementById("ekran").classList.add("darken"); break;
+        case "random": sonuc.innerHTML="kendini sev pampa"; renkEfekti("cyan"); break;
+        default: sonuc.innerHTML="Bu şifre bende yok pampa";
       }
     }
 
@@ -320,4 +277,3 @@
 
 </body>
 </html>
-
