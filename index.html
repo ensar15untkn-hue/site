@@ -23,7 +23,7 @@
       z-index: 5;
     }
 
-    /* ✅ FOTO + YANIP SÖNEN ÇERÇEVE */
+    /* FOTO + YANIP SÖNEN ÇERÇEVE */
     .pp-wrapper {
       display: flex;
       justify-content: center;
@@ -67,15 +67,18 @@
       margin-bottom: 15px;
     }
 
+    /* 🔑 ŞİFRE KUTUSU BURASI */
     input {
       padding: 12px;
-      width: 230px;
+      width: 250px;
       border-radius: 10px;
       border: none;
       font-size: 16px;
       text-align: center;
       margin-bottom: 15px;
       outline: none;
+      background: #222;
+      color: #fff;
     }
 
     .buton {
@@ -112,7 +115,7 @@
       font-weight: bold;
     }
 
-    /* ✅ KÖŞE IŞIK EFEKTİ */
+    /* KÖŞE IŞIK EFEKTİ */
     .glow::before {
       content: "";
       position: fixed;
@@ -133,17 +136,18 @@
 
   <div class="kutu">
 
-    <!-- ✅ SENİN FOTO -->
+    <!-- FOTO -->
     <div class="pp-wrapper">
       <div class="pp-isin">
-        <img src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp" class="pp">
+        <img src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp?ex=69373947&is=6935e7c7&hm=1163668bafb97eeebcef1a7bb1cc13c0eeaef3ab2fde8db29bcd1ad657740e7e&" class="pp">
       </div>
     </div>
 
     <h1>Naber panpa ben Ensar 😎</h1>
     <p>Sagi derler – Şifreni yaz pampa 🔐</p>
 
-    <input type="password" id="sifre" placeholder="Şifreni yaz pampa">
+    <!-- 🔑 ŞİFRE GİRİŞİ -->
+    <input type="password" id="sifre" placeholder="Şifreni buraya yaz">
 
     <button class="buton" onclick="kontrolEt()">Mesajı Göster ❤️</button>
 
@@ -169,6 +173,7 @@
 
       if (!sifre) {
         sonuc.innerHTML = "Boş geçme pampa 😈";
+        document.getElementById("ekran").classList.remove("glow");
         return;
       }
 
