@@ -13,7 +13,6 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      transition: 0.4s;
     }
 
     .kutu {
@@ -67,7 +66,6 @@
       margin-bottom: 15px;
     }
 
-    /* 🔑 ŞİFRE KUTUSU */
     input {
       padding: 12px;
       width: 250px;
@@ -95,22 +93,14 @@
       border: none;
       cursor: pointer;
       box-shadow: 0 0 15px rgba(255,0,102,0.5);
-      transition: 0.2s;
-    }
-
-    .buton:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255,136,0,0.8);
-    }
-
-    .insta {
-      background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
-      box-shadow: 0 0 15px rgba(253,29,29,0.6);
     }
 
     .secondary {
       background: linear-gradient(45deg, #3c3c3c, #777);
-      box-shadow: 0 0 12px rgba(200,200,200,0.4);
+    }
+
+    .insta {
+      background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
     }
 
     .mesaj {
@@ -118,15 +108,9 @@
       font-size: 19px;
       min-height: 30px;
       font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.3s ease;
     }
 
-    .mesaj.goster {
-      opacity: 1;
-    }
-
-    /* KÖŞE IŞIK EFEKTİ */
+    /* KÖŞE IŞIK */
     .glow::before {
       content: "";
       position: fixed;
@@ -142,17 +126,16 @@
       to { opacity: 0.85; }
     }
 
-    /* EFE KARARTMA OVERLAY */
+    /* DARK */
     .darken::after {
       content: "";
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.55);
       z-index: 1;
-      pointer-events: none;
     }
 
-    /* EFEKT KATMANI (KALP YAĞMURU / KONFETİ) */
+    /* EFEKT KATMANI */
     #efektKatmani {
       position: fixed;
       inset: 0;
@@ -176,7 +159,6 @@
       position: absolute;
       width: 8px;
       height: 14px;
-      border-radius: 2px;
       animation: confettiFall 2.2s linear forwards;
     }
 
@@ -184,31 +166,39 @@
       0% { transform: translateY(-10%) rotate(0deg); opacity: 1; }
       100% { transform: translateY(110%) rotate(360deg); opacity: 0; }
     }
+
+    /* NEHİR FOTO */
+    #nehirFoto {
+      display: none;
+      margin-top: 15px;
+      width: 160px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px red;
+    }
   </style>
 </head>
 <body id="ekran">
 
-  <!-- Efekt katmanı -->
   <div id="efektKatmani"></div>
 
   <div class="kutu">
 
-    <!-- FOTO -->
+    <!-- MAYMUN FOTO -->
     <div class="pp-wrapper">
       <div class="pp-isin">
-        <img src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp" class="pp">
+        <img
+          src="https://cdn.discordapp.com/attachments/1442521696690245814/1447328577837207746/the-original-image-of-the-monkey-thinking-meme-v0-g5bpdf8smaaf1.webp"
+          class="pp">
       </div>
     </div>
 
-    <h1>Naber panpa ben Ensar </h1>
+    <h1>Naber panpa ben Ensar</h1>
     <p>Sagi derler – Şifreni yaz pampa 🔐</p>
 
-    <!-- 🔑 ŞİFRE GİRİŞİ -->
     <input type="password" id="sifre" placeholder="Şifreni buraya yaz">
 
     <button class="buton" onclick="kontrolEt()">Mesajı Göster ❤️</button>
 
-    <!-- Yeni genel mesaj butonu -->
     <button class="buton secondary" onclick="genelMesaj()">
       Şifren yok mu? Sana da mesajım var 💬
     </button>
@@ -218,70 +208,115 @@
     </a>
 
     <div class="mesaj" id="sonuc"></div>
+
+    <img
+      id="nehirFoto"
+      src="https://cdn.discordapp.com/attachments/1433088303200079935/1447334125727121589/WhatsApp_Gorsel_2025-12-08_saat_00.08.17_07b42414.jpg">
   </div>
 
   <script>
     function temizEfekt() {
-      const katman = document.getElementById("efektKatmani");
-      katman.innerHTML = "";
-      const ekran = document.getElementById("ekran");
-      ekran.classList.remove("darken");
+      document.getElementById("efektKatmani").innerHTML = "";
+      document.getElementById("ekran").classList.remove("darken", "glow");
+      document.getElementById("nehirFoto").style.display = "none";
     }
 
     function kalpYagmuru() {
       temizEfekt();
-      const katman = document.getElementById("efektKatmani");
-      for (let i = 0; i < 25; i++) {
-        const span = document.createElement("span");
-        span.className = "heart";
-        span.textContent = "💗";
-        span.style.left = Math.random() * 100 + "%";
-        span.style.animationDelay = (Math.random() * 1.2) + "s";
-        katman.appendChild(span);
+      const kat = document.getElementById("efektKatmani");
+      for (let i = 0; i < 20; i++) {
+        let h = document.createElement("span");
+        h.className = "heart";
+        h.textContent = "💗";
+        h.style.left = Math.random() * 100 + "%";
+        h.style.animationDelay = (Math.random() * 1.2) + "s";
+        kat.appendChild(h);
       }
     }
 
     function konfetiPatlat() {
       temizEfekt();
-      const katman = document.getElementById("efektKatmani");
-      const renkler = ["#ff004c", "#ffb300", "#00f7ff", "#9d00ff", "#00ff7b"];
-      for (let i = 0; i < 35; i++) {
-        const parca = document.createElement("div");
-        parca.className = "confetti";
-        parca.style.left = Math.random() * 100 + "%";
-        parca.style.backgroundColor = renkler[Math.floor(Math.random() * renkler.length)];
-        parca.style.animationDelay = (Math.random() * 1.0) + "s";
-        katman.appendChild(parca);
+      const kat = document.getElementById("efektKatmani");
+      const renkler = ["red", "yellow", "cyan", "purple", "lime"];
+      for (let i = 0; i < 25; i++) {
+        let c = document.createElement("div");
+        c.className = "confetti";
+        c.style.left = Math.random() * 100 + "%";
+        c.style.background = renkler[Math.floor(Math.random() * renkler.length)];
+        c.style.animationDelay = (Math.random() * 1.0) + "s";
+        kat.appendChild(c);
       }
     }
 
-    function renkEfekti(renk) {
-      let ekran = document.getElementById("ekran");
-      ekran.style.setProperty("--renk", renk);
-      ekran.classList.remove("glow");
-      void ekran.offsetWidth;
-      ekran.classList.add("glow");
-    }
-
-    function mesajYaz(yazi) {
-      const sonuc = document.getElementById("sonuc");
-      sonuc.classList.remove("goster");
-      // reflow
-      void sonuc.offsetWidth;
-      sonuc.innerHTML = yazi;
-      sonuc.classList.add("goster");
+    function renkEfekti(r) {
+      document.body.style.setProperty("--renk", r);
+      document.getElementById("ekran").classList.add("glow");
     }
 
     function kontrolEt() {
-      var input = document.getElementById("sifre");
-      var sifre = input.value.trim().toLowerCase();
-
       temizEfekt();
-      document.getElementById("ekran").classList.remove("glow");
+      const input = document.getElementById("sifre");
+      const sifre = input.value.toLowerCase().trim();
+      const sonuc = document.getElementById("sonuc");
 
       if (!sifre) {
-        mesajYaz("Boş geçme pampa 😈");
+        sonuc.innerHTML = "Boş geçme pampa 😈";
         return;
       }
 
-      let bulun
+      switch (sifre) {
+        case "melis":
+          sonuc.innerHTML = "sevıyom senı pampa";
+          renkEfekti("red");
+          kalpYagmuru();
+          break;
+        case "mete":
+          sonuc.innerHTML = "kralsın dostum";
+          renkEfekti("deepskyblue");
+          break;
+        case "ayse":
+          sonuc.innerHTML = "best frıendlerımdensın kanka";
+          renkEfekti("gold");
+          break;
+        case "eren":
+          sonuc.innerHTML = "sanalda npcsin seviyom seni kanka";
+          renkEfekti("purple");
+          break;
+        case "mustafa":
+          sonuc.innerHTML = "senle haliçe işiyekmi pampa, doğum günün erkenden kutlu olsun 🎂🔥";
+          renkEfekti("orange");
+          konfetiPatlat();
+          break;
+        case "nehir":
+          sonuc.innerHTML = "sevilion kanka — bu sen yaz 🔥";
+          renkEfekti("crimson");
+          document.getElementById("nehirFoto").style.display = "block";
+          break;
+        case "enes":
+          sonuc.innerHTML = "seviyom seni pampa ❤️";
+          renkEfekti("hotpink");
+          kalpYagmuru();
+          break;
+        case "efe":
+          sonuc.innerHTML = "annenı dusunuyom pampaaa 😈";
+          renkEfekti("lime");
+          document.getElementById("ekran").classList.add("darken");
+          break;
+        case "random":
+          sonuc.innerHTML = "kendini sev pampa ❤️";
+          renkEfekti("cyan");
+          break;
+        default:
+          sonuc.innerHTML = "Bu şifre bende yok pampa 😅";
+      }
+    }
+
+    function genelMesaj() {
+      temizEfekt();
+      document.getElementById("sonuc").innerHTML =
+        "Şifren olmasa da sorun değil pampa. Derdin varsa gel anlat, dinlerim seni. Kendine dikkat et, yalnız değilsin 💙";
+    }
+  </script>
+
+</body>
+</html>
