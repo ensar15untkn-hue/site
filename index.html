@@ -49,7 +49,6 @@
       grid-template-columns: 280px 1fr;
       gap:14px;
     }
-
     @media (max-width: 900px){
       .wrap{grid-template-columns: 1fr;}
     }
@@ -74,9 +73,7 @@
       opacity:.6;
     }
 
-    .side{
-      padding:14px 14px 16px;
-    }
+    .side{ padding:14px 14px 16px; }
 
     .brand{
       text-align:left;
@@ -85,18 +82,8 @@
       border-radius:14px;
       background: rgba(255,255,255,.25);
     }
-
-    .brand h1{
-      margin:0;
-      font-size:20px;
-      letter-spacing:.4px;
-    }
-    .brand p{
-      margin:6px 0 0;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.35;
-    }
+    .brand h1{ margin:0; font-size:20px; letter-spacing:.4px; }
+    .brand p{ margin:6px 0 0; font-size:13px; color:var(--muted); line-height:1.35; }
 
     .archiveTitle{
       margin:14px 0 8px;
@@ -107,12 +94,7 @@
       text-transform:uppercase;
     }
 
-    .btns{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
+    .btns{ display:flex; flex-wrap:wrap; gap:8px; }
     .btn{
       cursor:pointer;
       border:1px solid rgba(92,74,58,.35);
@@ -127,99 +109,56 @@
     .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.55); }
     .btn.active{ background: rgba(123,45,45,.15); border-color: rgba(123,45,45,.35); }
 
-    .search{
-      margin-top:12px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
+    .search{ margin-top:12px; display:flex; gap:8px; align-items:center; }
     input{
-      flex:1;
-      padding:10px 10px;
-      border-radius:12px;
+      flex:1; padding:10px 10px; border-radius:12px;
       border:1px solid rgba(92,74,58,.35);
       background: rgba(255,255,255,.35);
-      color:var(--ink);
-      outline:none;
-      font-size:14px;
+      color:var(--ink); outline:none; font-size:14px;
     }
 
-    .main{
-      padding:18px 18px 20px;
-    }
-
+    .main{ padding:18px 18px 20px; }
     .headerLine{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:10px;
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:10px; flex-wrap:wrap; margin-bottom:10px;
     }
 
     .seal{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
+      display:inline-block; padding:6px 10px; border-radius:999px;
       background: rgba(123,45,45,.14);
       border:1px solid rgba(123,45,45,.28);
-      color:var(--seal);
-      font-weight:800;
-      letter-spacing:.4px;
-      font-size:12px;
-      text-transform:uppercase;
+      color:var(--seal); font-weight:800; letter-spacing:.4px;
+      font-size:12px; text-transform:uppercase;
     }
 
-    .pageTitle{
-      margin:0;
-      font-size:26px;
-      letter-spacing:.2px;
-    }
+    .pageTitle{ margin:0; font-size:26px; letter-spacing:.2px; }
 
     .meta{
-      margin:10px 0 14px;
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:13px;
+      margin:10px 0 14px; display:flex; gap:8px; flex-wrap:wrap;
+      color:var(--muted); font-size:13px;
     }
     .pill{
       border:1px solid rgba(92,74,58,.30);
-      border-radius:999px;
-      padding:6px 10px;
+      border-radius:999px; padding:6px 10px;
       background: rgba(255,255,255,.25);
     }
 
     .story{
-      font-size:16px;
-      line-height:1.75;
-      color:var(--ink);
+      font-size:16px; line-height:1.75; color:var(--ink);
       white-space:pre-wrap;
     }
 
     .quote{
-      margin:14px 0 0;
-      padding:12px 12px;
+      margin:14px 0 0; padding:12px 12px;
       border-left:4px solid rgba(123,45,45,.35);
       background: rgba(255,255,255,.18);
-      border-radius:12px;
-      color:var(--muted);
-      font-style:italic;
+      border-radius:12px; color:var(--muted); font-style:italic;
     }
 
-    .hint{
-      margin-top:12px;
-      color:rgba(92,74,58,.85);
-      font-size:13px;
-    }
-
+    .hint{ margin-top:12px; color:rgba(92,74,58,.85); font-size:13px; }
     .footerNote{
-      margin-top:14px;
-      font-size:12px;
-      color:rgba(92,74,58,.75);
-      border-top:1px dashed rgba(92,74,58,.35);
-      padding-top:10px;
+      margin-top:14px; font-size:12px; color:rgba(92,74,58,.75);
+      border-top:1px dashed rgba(92,74,58,.35); padding-top:10px;
     }
   </style>
 </head>
@@ -231,10 +170,7 @@
     <aside class="panel side">
       <div class="brand">
         <h1>sagininmesaji • Arşiv</h1>
-        <p>
-          Uydurma tarih kayıtları. Gerçek değil, tamamen mizah/kurgu.
-          Her tarih ayrı dosya gibi düşün.
-        </p>
+        <p>Uydurma tarih kayıtları. Gerçek değil, tamamen mizah/kurgu.</p>
       </div>
 
       <div class="archiveTitle">Kronoloji</div>
@@ -267,19 +203,19 @@
         Soldan bir tarihe basınca olay burada “eski sayfa” gibi açılacak.
       </div>
 
-      <div class="quote" id="not">
+      <div class="quote">
         “Bazı günler vardır; küçücük bir detay, koskoca bir efsaneye dönüşür…”
       </div>
 
       <div class="footerNote">
-        Not: Dil/ifadeler “tarih kitabı” havası için hafif düzenlenmiştir.
+        Not: Dil/ifadeler tarih kitabı havası için düzenlenmiştir.
       </div>
     </main>
 
   </div>
 
   <script>
-    // Veriler (1946 dahil)
+    // TÜM OLAYLAR (1999 dahil)
     const OLAYLAR = [
       {
         tarih: "1946",
@@ -319,23 +255,21 @@
         metin:
           "Sıradan bir günde Ensar, Mustafa ve Mete, Beşiktaş’ta otobüs kuyruğunda sıra gözetmeden ilerlemeye çalışmıştır.\n" +
           "Bu durum, oldukça agresif bir dayıyla karşı karşıya gelmelerine yol açmıştır. Tartışma büyürken Ensar bir anda\n" +
-          "“ya ne bakcam, ne bakcam ya” diye çıkışmış; olay, çevredeki tanıkların diliyle ‘çok talihsiz ve utandırıcı anlardan biri’\n" +
+          "“ya ne bakcam, ne bakcam ya” diye çıkışmış; olay, tanıkların diliyle ‘çok talihsiz ve utandırıcı anlardan biri’\n" +
           "olarak anılmaya başlanmıştır.\n\n" +
           "Böylece kayıt, “Ne Bakcam?” başlığıyla resmî arşive eklenmiştir."
+      },
+      {
+        tarih: "1999",
+        baslik: "bokçu mehmet Hadisesi",
+        dosyaNo: "ARŞ-1999-01",
+        metin:
+          "1999 yılında kayıtlara geçen bu olayda, Mehmet kardeşimiz beklenmedik bir temizlik göreviyle\n" +
+          "karşı karşıya kalmıştır. Gün içinde yaşanan bok temizliği arkadaşlarının kulağına gitmiş;\n" +
+          "bu durum lakabının tarih sayfalarına “bokçu Mehmet” olarak geçmesine neden olmuştur."
       }
-
-{
-  tarih: "1999",
-  baslik: "bokçu mehmet Hadisesi",
-  dosyaNo: "ARŞ-1999-01",
-  metin:
-    "1999 yılında kayıtlara geçen bu olayda, Mehmet kardeşimiz beklenmedik bir temizlik göreviyle\n" +
-    "karşı karşıya kalmıştır. Gün içinde yaşanan bok temizliği arkadaşlarının kulağına gelmiştir ve lakabı tarih sayfalarına bokçu mehmet olarak damgasını vurmuştur."
-},
-      
     ];
 
-    // UI elemanları
     const butonlar = document.getElementById("butonlar");
     const baslik = document.getElementById("baslik");
     const metin = document.getElementById("metin");
@@ -346,10 +280,7 @@
 
     function listeyiGuncelle(){
       const q = (arama.value || "").trim().toLowerCase();
-
-      // kronolojik sırala
       const sirali = [...OLAYLAR].sort((a,b)=> Number(a.tarih) - Number(b.tarih));
-
       const filtre = sirali.filter(o =>
         !q ||
         o.tarih.toLowerCase().includes(q) ||
@@ -373,7 +304,6 @@
       const o = OLAYLAR.find(x => x.tarih === tarih);
       if(!o) return;
 
-      // aktif buton
       document.querySelectorAll(".btn").forEach(b=>{
         b.classList.toggle("active", b.textContent === tarih);
       });
@@ -392,398 +322,7 @@
 
     // Başlat
     listeyiGuncelle();
-    // Otomatik ilkini aç
     olayiAc("1946");
   </script>
 </body>
 </html>
-```0<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>sagininmesaji • Arşiv</title>
-
-  <style>
-    :root{
-      --paper:#efe3c5;
-      --ink:#241a12;
-      --muted:#5c4a3a;
-      --seal:#7b2d2d;
-      --border:#b89b73;
-    }
-
-    body{
-      margin:0;
-      color:var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      background:
-        radial-gradient(1200px 800px at 30% 10%, rgba(255,255,255,.35), transparent 55%),
-        radial-gradient(900px 700px at 80% 30%, rgba(0,0,0,.12), transparent 60%),
-        linear-gradient(180deg, #1b1410 0%, #0f0b09 100%);
-      min-height:100vh;
-    }
-
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          rgba(0,0,0,.03) 0px,
-          rgba(0,0,0,.03) 1px,
-          transparent 2px,
-          transparent 6px
-        );
-      mix-blend-mode:multiply;
-      opacity:.35;
-    }
-
-    .wrap{
-      max-width:1050px;
-      margin:0 auto;
-      padding:18px;
-      display:grid;
-      grid-template-columns: 280px 1fr;
-      gap:14px;
-    }
-
-    @media (max-width: 900px){
-      .wrap{grid-template-columns: 1fr;}
-    }
-
-    .panel{
-      background: linear-gradient(180deg, rgba(239,227,197,.95), rgba(235,219,187,.92));
-      border:1px solid rgba(184,155,115,.7);
-      border-radius:18px;
-      box-shadow: 0 18px 40px rgba(0,0,0,.35);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .panel::after{
-      content:"";
-      position:absolute; inset:-40px;
-      background:
-        radial-gradient(60px 60px at 20px 80px, rgba(0,0,0,.10), transparent 60%),
-        radial-gradient(70px 70px at 95% 30%, rgba(0,0,0,.09), transparent 60%),
-        radial-gradient(90px 90px at 80% 95%, rgba(0,0,0,.08), transparent 60%);
-      pointer-events:none;
-      opacity:.6;
-    }
-
-    .side{
-      padding:14px 14px 16px;
-    }
-
-    .brand{
-      text-align:left;
-      padding:10px 12px;
-      border:1px dashed rgba(92,74,58,.45);
-      border-radius:14px;
-      background: rgba(255,255,255,.25);
-    }
-
-    .brand h1{
-      margin:0;
-      font-size:20px;
-      letter-spacing:.4px;
-    }
-    .brand p{
-      margin:6px 0 0;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.35;
-    }
-
-    .archiveTitle{
-      margin:14px 0 8px;
-      font-weight:700;
-      color:var(--muted);
-      letter-spacing:.3px;
-      font-size:13px;
-      text-transform:uppercase;
-    }
-
-    .btns{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .btn{
-      cursor:pointer;
-      border:1px solid rgba(92,74,58,.35);
-      background: rgba(255,255,255,.35);
-      color:var(--ink);
-      border-radius:999px;
-      padding:9px 12px;
-      font-weight:700;
-      font-size:13px;
-      transition: transform .08s ease, background .15s ease;
-    }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.55); }
-    .btn.active{ background: rgba(123,45,45,.15); border-color: rgba(123,45,45,.35); }
-
-    .search{
-      margin-top:12px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    input{
-      flex:1;
-      padding:10px 10px;
-      border-radius:12px;
-      border:1px solid rgba(92,74,58,.35);
-      background: rgba(255,255,255,.35);
-      color:var(--ink);
-      outline:none;
-      font-size:14px;
-    }
-
-    .main{
-      padding:18px 18px 20px;
-    }
-
-    .headerLine{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:10px;
-    }
-
-    .seal{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(123,45,45,.14);
-      border:1px solid rgba(123,45,45,.28);
-      color:var(--seal);
-      font-weight:800;
-      letter-spacing:.4px;
-      font-size:12px;
-      text-transform:uppercase;
-    }
-
-    .pageTitle{
-      margin:0;
-      font-size:26px;
-      letter-spacing:.2px;
-    }
-
-    .meta{
-      margin:10px 0 14px;
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .pill{
-      border:1px solid rgba(92,74,58,.30);
-      border-radius:999px;
-      padding:6px 10px;
-      background: rgba(255,255,255,.25);
-    }
-
-    .story{
-      font-size:16px;
-      line-height:1.75;
-      color:var(--ink);
-      white-space:pre-wrap;
-    }
-
-    .quote{
-      margin:14px 0 0;
-      padding:12px 12px;
-      border-left:4px solid rgba(123,45,45,.35);
-      background: rgba(255,255,255,.18);
-      border-radius:12px;
-      color:var(--muted);
-      font-style:italic;
-    }
-
-    .hint{
-      margin-top:12px;
-      color:rgba(92,74,58,.85);
-      font-size:13px;
-    }
-
-    .footerNote{
-      margin-top:14px;
-      font-size:12px;
-      color:rgba(92,74,58,.75);
-      border-top:1px dashed rgba(92,74,58,.35);
-      padding-top:10px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-
-    <!-- SOL: ARŞİV -->
-    <aside class="panel side">
-      <div class="brand">
-        <h1>sagininmesaji • Arşiv</h1>
-        <p>
-          Uydurma tarih kayıtları. Gerçek değil, tamamen mizah/kurgu.
-          Her tarih ayrı dosya gibi düşün.
-        </p>
-      </div>
-
-      <div class="archiveTitle">Kronoloji</div>
-      <div class="btns" id="butonlar"></div>
-
-      <div class="search">
-        <input id="arama" placeholder="Başlık/olay içinde ara..." oninput="listeyiGuncelle()" />
-      </div>
-
-      <div class="hint" id="sayac"></div>
-    </aside>
-
-    <!-- SAĞ: SAYFA -->
-    <main class="panel main">
-      <div class="headerLine">
-        <div>
-          <div class="seal">Resmî Arşiv Kaydı</div>
-          <h2 class="pageTitle" id="baslik">Bir kayıt seç…</h2>
-        </div>
-        <div class="seal" id="tarihRozet">Tarih: —</div>
-      </div>
-
-      <div class="meta" id="meta">
-        <span class="pill">Dosya No: —</span>
-        <span class="pill">Kategori: “Okul Efsaneleri”</span>
-        <span class="pill">Durum: Arşivlendi</span>
-      </div>
-
-      <div class="story" id="metin">
-        Soldan bir tarihe basınca olay burada “eski sayfa” gibi açılacak.
-      </div>
-
-      <div class="quote" id="not">
-        “Bazı günler vardır; küçücük bir detay, koskoca bir efsaneye dönüşür…”
-      </div>
-
-      <div class="footerNote">
-        Not: Dil/ifadeler “tarih kitabı” havası için hafif düzenlenmiştir.
-      </div>
-    </main>
-
-  </div>
-
-  <script>
-    // Veriler (1946 dahil)
-    const OLAYLAR = [
-      {
-        tarih: "1946",
-        baslik: "Büyük Yazım Hatası Vakası",
-        dosyaNo: "ARŞ-1946-01",
-        metin:
-          "1946 yılında yaşanan bu olayda, sıradan bir mesajlaşma esnasında yapılan küçük bir yazım hatası,\n" +
-          "meselenin bambaşka anlaşılmasına yol açmıştır. İlk anda ortam gerilmiş olsa da,\n" +
-          "kısa süre içinde olayın tamamen masum bir yanlışlıktan ibaret olduğu anlaşılmıştır.\n" +
-          "Olay, arşiv kayıtlarına “Büyük Yazım Hatası Vakası” olarak geçmiştir."
-      },
-      {
-        tarih: "1947",
-        baslik: "“Vallahi Taksi” Vakası",
-        dosyaNo: "ARŞ-1947-01",
-        metin:
-          "Mustafa kardeşimiz, 5,5 günlük devamsızlığı varken, aklına düşen tuhaf bir hayalin peşinden koşup\n" +
-          "Martı’ya binmek istemiştir. Ne var ki o gün Martı’ya binememiş; üstüne, devamsızlık meselesi yüzünden\n" +
-          "sınıfta kalma ihtimaliyle yüzleşmiştir.\n\n" +
-          "Olayın devamında Martı/TAG mevzusu aile içinde gereksiz bir tartışmaya dönüşmüş ve gün,\n" +
-          "‘Vallahi Taksi’ diye anılır olmuştur."
-      },
-      {
-        tarih: "1948",
-        baslik: "“Ya Ne Ne?” Hadisesi",
-        dosyaNo: "ARŞ-1948-01",
-        metin:
-          "Sıradan bir günde Metehan kardeşimiz, Ensar’ı arayıp okula gelip gelmeyeceğini sormak istemiştir.\n" +
-          "Ensar ise telefonu, aşırı ince ve sinir bozucu bir tonda “ya ne ne” diye açınca,\n" +
-          "konuşma daha ilk saniyede tarihe geçmiştir.\n\n" +
-          "Arşiv kayıtlarına göre bu olay, ‘en kısa sürede en çok tilt ettiren selamlaşma’ olarak not düşülmüştür."
-      },
-      {
-        tarih: "1949",
-        baslik: "“Ne Bakcam?” Olayı",
-        dosyaNo: "ARŞ-1949-01",
-        metin:
-          "Sıradan bir günde Ensar, Mustafa ve Mete, Beşiktaş’ta otobüs kuyruğunda sıra gözetmeden ilerlemeye çalışmıştır.\n" +
-          "Bu durum, oldukça agresif bir dayıyla karşı karşıya gelmelerine yol açmıştır. Tartışma büyürken Ensar bir anda\n" +
-          "“ya ne bakcam, ne bakcam ya” diye çıkışmış; olay, çevredeki tanıkların diliyle ‘çok talihsiz ve utandırıcı anlardan biri’\n" +
-          "olarak anılmaya başlanmıştır.\n\n" +
-          "Böylece kayıt, “Ne Bakcam?” başlığıyla resmî arşive eklenmiştir."
-      }
-    ];
-
-    // UI elemanları
-    const butonlar = document.getElementById("butonlar");
-    const baslik = document.getElementById("baslik");
-    const metin = document.getElementById("metin");
-    const tarihRozet = document.getElementById("tarihRozet");
-    const meta = document.getElementById("meta");
-    const arama = document.getElementById("arama");
-    const sayac = document.getElementById("sayac");
-
-    function listeyiGuncelle(){
-      const q = (arama.value || "").trim().toLowerCase();
-
-      // kronolojik sırala
-      const sirali = [...OLAYLAR].sort((a,b)=> Number(a.tarih) - Number(b.tarih));
-
-      const filtre = sirali.filter(o =>
-        !q ||
-        o.tarih.toLowerCase().includes(q) ||
-        o.baslik.toLowerCase().includes(q) ||
-        o.metin.toLowerCase().includes(q)
-      );
-
-      butonlar.innerHTML = "";
-      filtre.forEach((o) => {
-        const b = document.createElement("button");
-        b.className = "btn";
-        b.textContent = o.tarih;
-        b.onclick = () => olayiAc(o.tarih);
-        butonlar.appendChild(b);
-      });
-
-      sayac.textContent = `Kayıt sayısı: ${filtre.length}`;
-    }
-
-    function olayiAc(tarih){
-      const o = OLAYLAR.find(x => x.tarih === tarih);
-      if(!o) return;
-
-      // aktif buton
-      document.querySelectorAll(".btn").forEach(b=>{
-        b.classList.toggle("active", b.textContent === tarih);
-      });
-
-      baslik.textContent = `${o.tarih} — ${o.baslik}`;
-      tarihRozet.textContent = `Tarih: ${o.tarih}`;
-
-      meta.innerHTML = `
-        <span class="pill">Dosya No: ${o.dosyaNo}</span>
-        <span class="pill">Kategori: “Okul Efsaneleri”</span>
-        <span class="pill">Durum: Arşivlendi</span>
-      `;
-
-      metin.textContent = o.metin;
-    }
-
-    // Başlat
-    listeyiGuncelle();
-    // Otomatik ilkini aç
-    olayiAc("1946");
-  </script>
-</body>
-</html>
-```0
